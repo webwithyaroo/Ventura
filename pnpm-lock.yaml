@@ -110,11 +110,17 @@ importers:
         specifier: ^5.7.3
         version: 5.7.3
 
+  packages/backend:
+    devDependencies:
+      '@workspace/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+      typescript:
+        specifier: latest
+        version: 5.9.2
+
   packages/eslint-config:
     devDependencies:
-      '@eslint/js':
-        specifier: ^9.32.0
-        version: 9.32.0
       '@next/eslint-plugin-next':
         specifier: ^15.1.7
         version: 15.1.7
@@ -269,10 +275,6 @@ packages:
 
   '@eslint/js@9.20.0':
     resolution: {integrity: sha512-iZA07H9io9Wn836aVTytRaNqh00Sad+EamwOVJT12GTLw1VGMFV/4JaME+JjLtr9fiGaoWgYnS54wrfWsSs4oQ==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-
-  '@eslint/js@9.32.0':
-    resolution: {integrity: sha512-BBpRFZK3eX6uMLKz8WxFOBIFFcGFJ/g8XuwjTHCqHROSIsopI+ddn/d5Cfh36+7+e5edVS8dbSHnBNhrLEX0zg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@eslint/object-schema@2.1.6':
@@ -2442,8 +2444,6 @@ snapshots:
       - supports-color
 
   '@eslint/js@9.20.0': {}
-
-  '@eslint/js@9.32.0': {}
 
   '@eslint/object-schema@2.1.6': {}
 
