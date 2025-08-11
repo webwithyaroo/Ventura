@@ -4,6 +4,16 @@ import { useMutation, useQuery } from "convex/react";
 import { api } from "@workspace/backend/_generated/api";
 import { Button } from "@workspace/ui/components/button";
 
+/**
+ * Client React page that displays a list of users and provides a button to add a user.
+ *
+ * Renders a centered UI that:
+ * - Shows a loading message while users are being fetched via `useQuery(api.users.getMany)`.
+ * - When loaded, displays the fetched users as pretty-printed JSON.
+ * - Provides an "Add user" button that invokes the `useMutation(api.users.add)` mutation.
+ *
+ * This is a client-side component (uses Convex hooks) and has no props.
+ */
 export default function Page() {
   const users = useQuery(api.users.getMany);
   const addUser = useMutation(api.users.add);

@@ -3,6 +3,14 @@
 import { useQuery } from "convex/react";
 import { api } from "@workspace/backend/_generated/api";
 
+/**
+ * Client React component that fetches and displays a list of users.
+ *
+ * Renders a centered loading message while the users query is unresolved. Once data is available,
+ * it shows a heading and a pretty-printed JSON block of the fetched users.
+ *
+ * @returns The component's JSX: either a loading indicator or the users rendered inside a `<pre>` block.
+ */
 export default function Page() {
   const users = useQuery(api.users.getMany);
 
